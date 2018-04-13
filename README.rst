@@ -4,9 +4,9 @@ Python wrapper for extracting information from Scirate :microscope:
 
 This project is undergoing development.
 
-|Build Status| |Coverage Status| |Documenation Status| |Downloads| |Latest Version| |Supported Python Versions| |License|
+|Build Status| |Coverage Status|
 
-.. image:: https://imgur.com/a/4Smh3  
+.. image:: https://i.imgur.com/QONau8z.png
    :width: 100
    :height: 100
 
