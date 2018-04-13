@@ -6,7 +6,7 @@ This project is undergoing development.
 
 |Build Status| |Coverage Status|
 
-.. image:: https://i.imgur.com/QONau8z.png
+.. image:: https://i.imgur.com/QONau8z.png?1
    :width: 100
    :height: 100
 
