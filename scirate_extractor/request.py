@@ -1,6 +1,7 @@
 import requests
-import xmltodict
-import json
+
+
+from .parser import ScirateParser
 
 
 class ScirateRequestException(Exception):
@@ -15,13 +16,14 @@ class ScirateRequestException(Exception):
 
 class ScirateRequest():
     """ """
-    def __init__(self, client, path, query_dict, req_format='xml'):
+    def __init__(self, client, path, query_dict, req_format):
         """Initialize request object."""
         self.params = query_dict
-        #self.params.update(client.query_dict)
         self.host = client.base_url
         self.path = path
         self.req_format = req_format
+
+        self.parser = ScirateParser()
 
         for k, v in self.params.items():
             self.path += v
@@ -31,14 +33,8 @@ class ScirateRequest():
 
         if resp.status_code != 200:
             raise ScirateRequestException(resp.reason, self.path)
-        if self.req_format == 'xml':
-            #print(resp.content)
-            data_dict = {"ScirateResponse": {"name" : {"name" : "TEST"}, "author" : {"author" : "TEST2"} } }
+        if self.req_format == "author":
+            return self.parser.parse_author(resp)
 
-            return data_dict["ScirateResponse"]
-            #data_dict = xmltodict.parse(resp.content)
-            #return data_dict['ScirateResponse']
-        #elif self.req_format == 'json':
-        #    return json.loads(resp.content)
         else:
             raise Exception("Invalid format.")

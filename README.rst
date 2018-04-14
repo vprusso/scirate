@@ -18,7 +18,7 @@ Dependencies
 
 This package depends on the following packages:
 
-- xmltodict
+- bs4
 - requests
 
 They can be installed using ``pip``.

@@ -14,12 +14,14 @@ class ScirateAuthor:
     @property
     def name(self):
         """Author name"""
-        print("WEFWE")
-        print(self._author_dict)
-        return "5"
         return self._author_dict['name']
 
     @property
     def category(self):
         """Author publishing category"""
         return self._author_dict['category']
+
+    @property
+    def papers(self):
+        """Papers of the author."""
+        return self._author_dict['papers']

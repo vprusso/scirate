@@ -26,9 +26,9 @@ class ScirateClient():
         req = ScirateRequest(self, *args, **kwargs)
         return req.request()
 
-    def author(self, author_id):
+    def author(self, first_name, last_name, category):
         """Get info about an author."""
-        resp = self.request("/search?q=au:", {'id': author_id})
-        print(resp['author'])
-        return ScirateAuthor(resp['author'], self)
+        author_id = last_name + "_" + first_name[0] + "+in:" + category
+        resp = self.request("/search?q=au:", {"id": author_id}, req_format="author")
+        return ScirateAuthor(resp["author"], self)
 
