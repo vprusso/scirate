@@ -1,4 +1,5 @@
-# scirate_extractor
+scirate_extractor
+------------
 
 Python wrapper for extracting information from Scirate :microscope:
 
@@ -51,5 +52,3 @@ License
    :target: https://travis-ci.org/vprusso/scirate_extractor
 .. |Coverage Status| image:: http://img.shields.io/coveralls/vprusso/scirate_extractor.svg
    :target: https://coveralls.io/r/vprusso/scirate_extractor
-.. |Documentation Status| image:: https://readthedocs.org/projects/scirate_extractor/badge/?version=latest
-   :target: https://readthedocs.org/projects/scirate_extractor/?badge=latest
