@@ -1,8 +1,26 @@
 import re
+import requests
 from bs4 import BeautifulSoup
 
 
-from .util import find_substr_btw 
+from .util import find_substr_btw
+
+
+class ScirateParserHelper():
+    """Helper class for ScirateParser."""
+    def __init__(self):
+        self.base_url = "https://scirate.com"
+
+    def author_pagination_url(self, page, params):
+        """Create Scirate pagination URL."""
+        return self.base_url+"/search?page="+str(page)+"&q=au%3A"+params["id"]+"+in%3A"+params["category"]
+
+    def check_no_papers_found(self, url):
+        """Returns true if pagination URL has no results."""
+        resp = requests.get(url)
+        soup = BeautifulSoup(resp.content, "lxml")
+        paper_html = soup.findAll("div", attrs={"class": "title"})
+        return paper_html == []
 
 
 class ScirateParserException(Exception):
@@ -18,31 +36,45 @@ class ScirateParser():
     """Parser for Scirate class."""
     def __init__(self):
         """ """
-        pass
+        self.parser_helper = ScirateParserHelper()
 
     def parse_author(self, resp, params):
         """Parse author information from Scirate."""
         soup = BeautifulSoup(resp.content, "lxml")
 
         name = params["first_name"] + " " + params["last_name"]
-        title_html = soup.findAll("div", attrs={"class": "title"})
+        paper_html = soup.findAll("div", attrs={"class": "title"})
         author_html = soup.findAll("div", attrs={"class": "authors"})
 
         arxiv_ids = []
         papers = []
-        for div in title_html:
-            links = div.findAll("a")
-            for a in links:
-                arxiv_ids.append(a["href"])
-                papers.append(a.contents[0])
-
         co_authors = []
-        for div in author_html:
-            links = div.findAll("a")
-            co_author = []
-            for a in links:
-                co_author.append(a.contents[0])
-            co_authors.append(co_author)
+
+        page_count = 1
+        page = self.parser_helper.author_pagination_url(page_count, params)
+
+        while not self.parser_helper.check_no_papers_found(page):
+
+            for div in paper_html:
+                links = div.findAll("a")
+                for a in links:
+                    arxiv_ids.append(a["href"])
+                    papers.append(a.contents[0])
+
+            for div in author_html:
+                links = div.findAll("a")
+                co_author = []
+                for a in links:
+                    co_author.append(a.contents[0])
+                co_authors.append(co_author)
+
+            page_count += 1
+            page = self.parser_helper.author_pagination_url(page_count, params)
+
+            resp = requests.get(page)
+            soup = BeautifulSoup(resp.content, "lxml")
+            paper_html = soup.findAll("div", attrs={"class": "title"})
+            author_html = soup.findAll("div", attrs={"class": "authors"})
 
         author_dict = {"arxiv_ids": arxiv_ids,
                        "papers": papers,
@@ -109,5 +141,10 @@ class ScirateParser():
 
         data_dict = {"ScirateResponse": {"paper": paper_dict}}
         return data_dict["ScirateResponse"]
+
+    def parse_category(self):
+        pass
+
+    
 
 

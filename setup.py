@@ -11,7 +11,7 @@ setup(
 
     packages=["scirate_extractor"],
     version="0.0.1",
-    install_requires=['nose', 'xmltodict', 'requests'],
+    install_requires=['nose', 'bs4', 'requests'],
 
     license="MIT",
 
