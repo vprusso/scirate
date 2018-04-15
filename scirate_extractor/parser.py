@@ -99,14 +99,14 @@ class ScirateParser():
 
         title = title_html[0].text
         abstract = abstract_html[0].text
-        scites = scites_html[0].text
+        scites = int(scites_html[0].text)
 
         date = date_html[0].text
         submitted_date = find_substr_btw(date, "Submitted", "to")
         published_date = find_substr_btw(date, "Published", "")
 
         author_comments = soup.body.findAll(text=re.compile("Author comments:"))
-        author_comments = author_comments[0].split(":")[1]
+        author_comments = author_comments[0].split(":")[1].rstrip().lstrip()
 
         category = ""
         for div in date_html:
@@ -117,10 +117,8 @@ class ScirateParser():
         authors = []
         for div in author_html:
             links = div.findAll("a")
-            author = []
             for a in links:
-                author.append(a.contents[0])
-            authors.append(author)
+                authors.append(a.contents[0])
 
         scitors = []
         for div in scitors_html:

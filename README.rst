@@ -19,6 +19,7 @@ Dependencies
 This package depends on the following packages:
 
 - bs4
+- lxml
 - requests
 
 They can be installed using ``pip``.
@@ -42,6 +43,12 @@ Contribution
 If you find an API method that is not supported by this package, feel
 free to create a Github issue. Also, you are more than welcome to submit
 a pull request for a bug fix or additional feature.
+
+TODO
+-------
+- Format submission and publication dates properly.
+- Category functionality.
+
 
 License
 -------
