@@ -17,6 +17,21 @@ class SciratePaper:
         return self._paper_dict["id"]
 
     @property
+    def submitted_date(self):
+        """Date of paper submission."""
+        return self._paper_dict["submitted_date"]
+
+    @property
+    def published_date(self):
+        """Date of paper publication."""
+        return self._paper_dict["published_date"]
+
+    @property
+    def author_comments(self):
+        """Author comments on paper."""
+        return self._paper_dict["author_comments"]
+
+    @property
     def title(self):
         """Title of paper."""
         return self._paper_dict["title"]
@@ -30,6 +45,11 @@ class SciratePaper:
     def scites(self):
         """Number of scites on paper."""
         return self._paper_dict["scites"]
+
+    @property
+    def scitors(self):
+        """Users who scited paper."""
+        return self._paper_dict["scitors"]
 
     @property
     def category(self):
