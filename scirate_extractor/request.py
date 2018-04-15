@@ -5,7 +5,7 @@ from .parser import ScirateParser
 
 
 class ScirateRequestException(Exception):
-    """ """ 
+    """ScirateRequest Exception class."""
     def __init__(self, error_msg, url):
         self.error_msg = error_msg
         self.url = url
@@ -15,7 +15,7 @@ class ScirateRequestException(Exception):
 
 
 class ScirateRequest():
-    """ """
+    """ScirateRequest class."""
     def __init__(self, client, path, query_dict, req_format):
         """Initialize request object."""
         self.params = query_dict
@@ -25,16 +25,17 @@ class ScirateRequest():
 
         self.parser = ScirateParser()
 
-        for k, v in self.params.items():
-            self.path += v
-
     def request(self):
+        """Make web request to Scirate URL."""
+        self.path += self.params["id"]
         resp = requests.get(self.host+self.path)
 
         if resp.status_code != 200:
             raise ScirateRequestException(resp.reason, self.path)
-        if self.req_format == "author":
-            return self.parser.parse_author(resp)
+        elif self.req_format == "author":
+            return self.parser.parse_author(resp, self.params)
+        elif self.req_format == "paper":
+            return self.parser.parse_paper(resp, self.params)
 
         else:
             raise Exception("Invalid format.")

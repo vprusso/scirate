@@ -1,4 +1,5 @@
 from .author import ScirateAuthor
+from .paper import SciratePaper
 from .request import ScirateRequest
 
 
@@ -29,6 +30,17 @@ class ScirateClient():
     def author(self, first_name, last_name, category):
         """Get info about an author."""
         author_id = last_name + "_" + first_name[0] + "+in:" + category
-        resp = self.request("/search?q=au:", {"id": author_id}, req_format="author")
+        params = {"id": author_id, 
+                  "first_name": first_name,
+                  "last_name": last_name,
+                  "category": category}
+
+        resp = self.request("/search?q=au:", params, req_format="author")
         return ScirateAuthor(resp["author"], self)
 
+    def paper(self, arxiv_id):
+        """Get info about a paper."""
+        params = {"id": arxiv_id}
+
+        resp = self.request("/arxiv/", params, req_format="paper")
+        return SciratePaper(resp["paper"], self)
