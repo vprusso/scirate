@@ -1,4 +1,4 @@
-from scirate_extractor.client import ScirateClient
+from scirate.client import ScirateClient
 
 
 class TestPaper():

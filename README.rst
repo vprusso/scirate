@@ -1,4 +1,4 @@
-scirate_extractor
+scirate
 ------------
 
 Python wrapper for extracting information from Scirate :microscope:
@@ -55,7 +55,7 @@ License
 
 `MIT License <http://opensource.org/licenses/mit-license.php>`__
 
-.. |Build Status| image:: http://img.shields.io/travis/vprusso/scirate_extractor.svg
-   :target: https://travis-ci.org/vprusso/scirate_extractor
-.. |Coverage Status| image:: http://img.shields.io/coveralls/vprusso/scirate_extractor.svg
-   :target: https://coveralls.io/r/vprusso/scirate_extractor
+.. |Build Status| image:: http://img.shields.io/travis/vprusso/scirate.svg
+   :target: https://travis-ci.org/vprusso/scirate
+.. |Coverage Status| image:: http://img.shields.io/coveralls/vprusso/scirate.svg
+   :target: https://coveralls.io/r/vprusso/scirate

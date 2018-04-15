@@ -1,15 +1,15 @@
 from setuptools import setup
 
 setup(
-    name="scirate_extractor",
+    name="scirate",
     description="Python wrapper for extracting content from Scirate.",
     long_description=open("README.md").read(),
-    url="https://github.com/vprusso/scirate_extractor",
+    url="https://github.com/vprusso/scirate",
 
     author="Vincent Russo",
     author_email="vincentrusso1@gmail.com",
 
-    packages=["scirate_extractor"],
+    packages=["scirate"],
     version="0.0.1",
     install_requires=['nose', 'bs4', 'lxml', 'requests'],
 
