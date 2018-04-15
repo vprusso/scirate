@@ -1,3 +1,5 @@
+"""Scirate Requests class."""
+
 import requests
 
 
@@ -36,6 +38,8 @@ class ScirateRequest():
             return self.parser.parse_author(resp, self.params)
         elif self.req_format == "paper":
             return self.parser.parse_paper(resp, self.params)
+        elif self.req_format == "category":
+            return self.parser.parse_category(resp, self.params)
 
         else:
             raise Exception("Invalid format.")

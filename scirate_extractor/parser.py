@@ -142,7 +142,7 @@ class ScirateParser():
         data_dict = {"ScirateResponse": {"paper": paper_dict}}
         return data_dict["ScirateResponse"]
 
-    def parse_category(self):
+    def parse_category(self, resp, params):
         pass
 
     
