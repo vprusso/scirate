@@ -11,10 +11,10 @@ class TestPaper():
         assert self.paper.arxiv_id == "1709.01837"
 
     def test_submitted_date(self):
-        pass
+        assert(self.paper.submitted_date == "2017-9-5")
 
     def test_published_date(self):
-        pass
+        assert(self.paper.published_date == "2017-9-7")
 
     def test_author_comments(self):
         assert(self.paper.author_comments == "11 pages")
@@ -38,4 +38,3 @@ class TestPaper():
     def test_authors(self):
         assert(self.paper.authors[0] == "Vincent Russo")
         assert(self.paper.authors[1] == "John Watrous")
-

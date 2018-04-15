@@ -1,3 +1,6 @@
+import datetime
+
+
 from .author import ScirateAuthor
 from .category import ScirateCategory
 from .paper import SciratePaper
@@ -46,10 +49,12 @@ class ScirateClient():
         resp = self.request("/arxiv/", params, req_format="paper")
         return SciratePaper(resp["paper"], self)
 
-    def category(self, category, date):
+    def category(self, category, date=datetime.datetime.today().strftime('%Y-%m-%d')):
         """Get arxiv listings for category."""
         search_id = category + "?date=" + date
-        params = {"id": search_id}
+        params = {"id": search_id,
+                  "category": category,
+                  "date": date}
 
         resp = self.request("/arxiv/", params, req_format="category")
         return ScirateCategory(resp["category"], self)
