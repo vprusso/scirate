@@ -3,7 +3,7 @@ scirate
 
 Python wrapper for extracting information from Scirate :microscope:
 
-|Build Status| |Coverage Status| |Downloads| |Latest Version| 
+|Build Status| |Documentation Status| |Coverage Status| |Latest Version| 
 |Supported Python versions| |License|
 
 .. image:: https://i.imgur.com/QONau8z.png?1
@@ -177,8 +177,8 @@ License
    :target: https://travis-ci.org/vprusso/scirate
 .. |Coverage Status| image:: http://img.shields.io/coveralls/vprusso/scirate.svg
    :target: https://coveralls.io/r/vprusso/scirate
-.. |Downloads| image:: https://img.shields.io/pypi/dm/goodreads.svg
-   :target: https://pypi.python.org/pypi/goodreads/
+.. |Documentation Status| image:: https://readthedocs.org/projects/scirate/badge/?version=latest
+   :target: https://readthedocs.org/projects/scirate/?badge=latest   
 .. |Latest Version| image:: https://img.shields.io/pypi/v/scirate.svg
    :target: https://pypi.python.org/pypi/scirate/
 .. |Supported Python versions| image:: https://img.shields.io/pypi/pyversions/scirate.svg
