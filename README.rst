@@ -1,7 +1,7 @@
 scirate
 ------------
 
-:snake: Python wrapper for extracting information from Scirate :microscope:
+Python wrapper for extracting information from Scirate :microscope:
 
 |Build Status| |Coverage Status|
 
