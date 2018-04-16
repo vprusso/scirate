@@ -44,7 +44,7 @@ directory.
 ::
 
     sudo python setup.py install
-Goodreads
+
 
 Examples
 --------
