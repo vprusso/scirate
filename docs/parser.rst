@@ -1,7 +1,7 @@
-client
+parser
 =======
 
 
-.. automodule:: scirate.client
+.. automodule:: scirate.parser
    :members:
    :undoc-members:

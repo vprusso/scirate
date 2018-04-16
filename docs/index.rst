@@ -45,7 +45,7 @@ website. Here are a few examples demonstrating how to access data on
 Scirate.
 
 Clients
-~~~~~
+~~~~~~~
 In order to interface with the content on Scirate, we start off my 
 creating a client. This client will be responsible for requesting
 information from Scirate and will serve as the intermediary for 
@@ -59,7 +59,7 @@ requesting and obtaining data.
 
 
 Papers
-~~~~~
+~~~~~~
 
 Let us access a paper on Scirate via the arXiv identifier. Say we want to
 access information via Scirate on the following `listing 1509.01147 <https://arxiv.org/abs/1509.01147>`__.
@@ -131,7 +131,7 @@ well.
     >>> math.NT
     
 Categories
-~~~~~
+~~~~~~~~~~
 
 One may also wish to look at papers under various arXiv identifier
 listings on Scirate. For instance, one may wish to find all of the 
@@ -143,6 +143,7 @@ papers posted under the 'quant-ph' category posted on September 7, 2017.
     >>> category = client.category("quant-ph", "09-07-2017")
     >>> category.papers[0:2]
     >>> ['Quantum Advantage from Conjugated Clifford Circuits', 'Extended Nonlocal Games from Quantum-Classical Games']
+    
 Contribution
 ------------
 
@@ -160,8 +161,9 @@ Contents:
 .. toctree::
    :maxdepth: 2
 
-   client
-   request   
-   paper
    author
-   category   
+   paper
+   category
+   client
+   parser
+   request
