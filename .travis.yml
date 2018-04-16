@@ -6,7 +6,7 @@ python:
 install:
     - pip install -r requirements.txt
     - pip install coveralls
-script: nosetests
+script: nosetests --with-coverage --cover-package=scirate
 notifications:
     email: false
 after_success:
