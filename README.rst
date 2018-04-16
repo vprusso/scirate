@@ -3,7 +3,8 @@ scirate
 
 Python wrapper for extracting information from Scirate :microscope:
 
-|Build Status| |Coverage Status|
+|Build Status| |Coverage Status| |Downloads| |Latest Version| 
+|Supported Python versions| |License|
 
 .. image:: https://i.imgur.com/QONau8z.png?1
    :width: 100
