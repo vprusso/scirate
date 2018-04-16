@@ -43,6 +43,7 @@ directory.
 ::
 
     sudo python setup.py install
+Goodreads
 
 Examples
 --------
@@ -175,3 +176,11 @@ License
    :target: https://travis-ci.org/vprusso/scirate
 .. |Coverage Status| image:: http://img.shields.io/coveralls/vprusso/scirate.svg
    :target: https://coveralls.io/r/vprusso/scirate
+.. |Downloads| image:: https://img.shields.io/pypi/dm/goodreads.svg
+   :target: https://pypi.python.org/pypi/goodreads/
+.. |Latest Version| image:: https://img.shields.io/pypi/v/scirate.svg
+   :target: https://pypi.python.org/pypi/scirate/
+.. |Supported Python versions| image:: https://img.shields.io/pypi/pyversions/scirate.svg
+   :target: https://pypi.python.org/pypi/scirate/
+.. |License| image:: https://img.shields.io/pypi/l/scirate.svg
+   :target: https://pypi.python.org/pypi/scirate/
