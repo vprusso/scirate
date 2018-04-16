@@ -29,3 +29,13 @@ class ScirateAuthor:
     def papers(self):
         """Papers of the author."""
         return self._author_dict["papers"]
+
+    @property
+    def arxiv_ids(self):
+        """arXiv ids of papers from author."""
+        return self._author_dict["arxiv_ids"]
+
+    @property
+    def co_authors(self):
+        """Co-authors of author for each paper."""
+        return self._author_dict["co_authors"]
