@@ -20,3 +20,10 @@ class TestAuthor():
 
     def test_author_category(self):
         assert self.author.category == "quant-ph"
+
+    def test_author_co_authors(self):
+        assert self.author.co_authors[-1][0] == "Alessandro Cosentino"
+        assert self.author.co_authors[-1][1] == "Vincent Russo"
+
+    def test_author_arxiv_ids(self):
+        assert self.author.arxiv_ids[-1] == "1307.3232"

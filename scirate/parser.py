@@ -74,7 +74,7 @@ class ScirateParser():
                 links = div.findAll("a")
                 co_author = []
                 for a in links:
-                    co_author.append(a.contents[0])
+                    co_author.append(a.contents[0].strip(",").rstrip())
                 co_authors.append(co_author)
 
             page_count += 1
@@ -201,7 +201,7 @@ class ScirateParser():
             links = div.findAll("a")
             co_author = []
             for a in links:
-                co_author.append(a.contents[0].strip(","))
+                co_author.append(a.contents[0].strip(",").rstrip())
             co_authors.append(co_author)
 
         category_dict = {"id": params["id"],

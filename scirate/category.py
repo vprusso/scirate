@@ -10,6 +10,9 @@ class ScirateCategory:
     def __repr__(self):
         return self.category
 
+    def __len__(self):
+        return len(self.category)
+
     @property
     def gid(self):
         """Scirate id of category query."""
