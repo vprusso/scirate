@@ -30,11 +30,11 @@ class TestCategory():
         assert self.category.arxiv_ids[1] == "1709.01837"
 
     def test_scites(self):
-        assert len(self.category.scites) == 14
+        assert len(self.category.scites) == 15
         assert self.category.scites[1] == 31
 
     def test_papers(self):
-        assert len(self.category.papers) == 14
+        assert len(self.category.papers) == 15
         assert self.category.papers[-1] == "Modeling Quantum Behavior in the Framework of Permutation Groups"
 
     def test_date(self):
