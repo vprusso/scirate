@@ -10,7 +10,7 @@ setup(
     author_email="vincentrusso1@gmail.com",
 
     packages=["scirate"],
-    version="0.0.8",
+    version="0.1.0",
     install_requires=['nose', 'bs4', 'lxml', 'requests'],
 
     license="MIT",
