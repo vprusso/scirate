@@ -135,7 +135,10 @@ class ScirateParser():
 
         # Author Comments from arXiv:
         author_comments = soup.body.findAll(text=re.compile("Author comments:"))
-        author_comments = author_comments[0].split(":")[1].rstrip().lstrip()
+        if author_comments != []:
+            author_comments = author_comments[0].split(":")[1].rstrip().lstrip()
+        else:
+            author_comments = ""
 
         # arXiv Category:
         category = ""
